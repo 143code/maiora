@@ -1,0 +1,30 @@
+<ul class="nav nav-pills nav-fill flex-column">
+  @for (menuItem of menuItems; track menuItem.id) {
+
+  <li class="nav-item">
+    <a
+      class="nav-link"
+      [ngClass]="{ active: selected === menuItem.id }"
+      aria-current="page"
+      [href]="menuItem.link"
+    >
+      {{ menuItem.name }}
+    </a>
+  </li>
+  }
+</ul>
+
+<!-- <ul class="nav justify-content-end">
+  <li class="nav-item">
+    <a class="nav-link active" aria-current="page" href="#">Active</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="#">Link</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="#">Link</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+  </li>
+</ul> -->

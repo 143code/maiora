@@ -1,0 +1,8 @@
+<mat-drawer-container [hasBackdrop]="true">
+  <mat-drawer #drawer [mode]="'over'"><app-side-menu /></mat-drawer>
+  <mat-drawer-content>
+    <app-header (sideNavToggle)="drawer.toggle()"></app-header>
+    <app-body></app-body>
+    <app-footer></app-footer>
+  </mat-drawer-content>
+</mat-drawer-container>
