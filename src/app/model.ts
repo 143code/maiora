@@ -14,6 +14,8 @@ export interface CartItem {
   id: number;
   price: number;
   count: number;
+  name: string;
+  burgerImage: string;
 }
 
 export interface Cart {

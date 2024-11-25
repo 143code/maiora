@@ -2,7 +2,7 @@
   <mat-drawer #drawer [mode]="'over'"><app-side-menu /></mat-drawer>
   <mat-drawer-content>
     <app-header (sideNavToggle)="drawer.toggle()"></app-header>
-    <app-body></app-body>
+    <router-outlet></router-outlet>
     <app-footer></app-footer>
   </mat-drawer-content>
 </mat-drawer-container>

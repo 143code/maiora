@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { CardComponent } from './card/card.component';
-import { burgers } from '../constants';
+import { BURGERS } from '../constants';
 
 @Component({
   selector: 'app-body',
@@ -9,5 +9,5 @@ import { burgers } from '../constants';
   styleUrl: './body.component.scss',
 })
 export class BodyComponent {
-  readonly burgers = burgers;
+  readonly burgers = BURGERS;
 }

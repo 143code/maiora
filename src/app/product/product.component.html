@@ -1,1 +1,35 @@
-<p>product works!</p>
+<div class="img-container">
+    <img [src]="burger?.burgerImage" [alt]="burger?.name">
+
+</div>
+<div class="description">
+    <div class="row d-flex justify-content-between">
+        <div class="col d-flex justify-content-start">
+            <h3>{{burger?.name}}</h3>
+        </div>
+        <div class="col-auto d-flex justify-content-end">
+            <h3>{{burger?.price | currency: 'CAD' : 'symbol-narrow' }}</h3>
+        </div>
+    </div>
+    @if (burger?.inStock) {
+    <div class="row-col stock">In Scock</div>
+    }@else {
+    <div class="row-col noStock">Out of Scock</div>
+    }
+    <div class="row d-flex justify-content-between ">
+        <div class="col d-flex justify-content-start">
+            <h3>Product Quantity</h3>
+        </div>
+        <div class="col-auto d-flex justify-content-end">
+            <div class="btn-group btn-group-sm" role="group" aria-label="Basic example">
+                <button type="button" class="btn btn-warning" (click)="onCountDecrement()">-</button>
+                <button type="button" class="btn btn-warning">{{cartCount}}</button>
+                <button type="button" class="btn btn-warning" (click)="onCountIncrement()">+</button>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <h3>Product Description</h3>
+        <p>{{burger?.burgerDescription}}</p>
+    </div>
+</div>

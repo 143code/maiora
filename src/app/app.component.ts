@@ -2,7 +2,6 @@ import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { HeaderComponent } from './header/header.component';
 import { MatSidenavModule } from '@angular/material/sidenav';
-import { BodyComponent } from './body/body.component';
 import { FooterComponent } from './footer/footer.component';
 import { SideMenuComponent } from './side-menu/side-menu.component';
 
@@ -12,7 +11,6 @@ import { SideMenuComponent } from './side-menu/side-menu.component';
     RouterOutlet,
     HeaderComponent,
     MatSidenavModule,
-    BodyComponent,
     FooterComponent,
     SideMenuComponent,
   ],
@@ -22,5 +20,5 @@ import { SideMenuComponent } from './side-menu/side-menu.component';
 export class AppComponent {
   title = 'FoodApp';
 
-  onSideNavToggle() { }
+  onSideNavToggle() {}
 }

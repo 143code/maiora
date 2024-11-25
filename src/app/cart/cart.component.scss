@@ -1,0 +1,30 @@
+@import "../../colors.scss";
+
+:host {
+  margin-bottom: 5rem;
+  .cartitemContainer {
+    display: flex;
+    flex-direction: row;
+    background-color: $mainYellow;
+    padding: 1rem;
+    border-radius: 1.5rem;
+  }
+  img {
+    border-radius: 1rem;
+    height: 6rem;
+    width: 8rem;
+    padding: 0.5 rem;
+    margin: 0.5rem;
+  }
+  .row {
+    margin: 2rem;
+  }
+
+  .btn-group {
+    border-radius: 1.5rem;
+  }
+
+  .btn.btn-sm.btn-warning {
+    margin-bottom: 50px;
+  }
+}

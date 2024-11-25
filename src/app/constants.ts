@@ -1,4 +1,4 @@
-export const burgers = [
+export const BURGERS = [
   {
     id: 1,
     name: 'Classic Cheeseburger',

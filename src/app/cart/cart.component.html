@@ -1,1 +1,49 @@
-<p>cart works!</p>
+@for (item of cart?.items; track item.id; let idx = $index) {
+
+<div class="row">
+    <div class="cartitemContainer">
+        <div class="col d-flex justify-content-center  align-items-center">
+            <img [src]="item.burgerImage" [alt]="item.name" />
+        </div>
+        <div class="col-auto d-flex justify-content-center align-items-start flex-column">
+            <h5>{{item.name}}</h5>
+            <h5>{{item.price}}</h5>
+        </div>
+        <div class="col d-flex justify-content-center align-items-center">
+            <div class="btn-group btn-group-sm" role="group" aria-label="Basic example">
+                <button type="button" class="btn btn-light" (click)="onCountDecrement(idx)">-</button>
+                <button type="button" class="btn btn-light">{{item.count}}</button>
+                <button type="button" class="btn btn-light" (click)="onCountIncrement(idx)">+</button>
+            </div>
+        </div>
+    </div>
+</div>
+}
+<div class="row d-flex justify-content-between">
+    <div class="col d-flex justify-content-start">
+        <h3>SubToTal</h3>
+    </div>
+    <div class="col-auto d-flex justify-content-end">
+        <h3>{{cart?.totalPrice | currency: 'CAD' : 'symbol-narrow' }}</h3>
+    </div>
+</div>
+<div class="row d-flex justify-content-between">
+
+    <div class="col d-flex justify-content-start">
+        <h3>Discount</h3>
+    </div>
+    <div class="col-auto d-flex justify-content-end">
+        <h3>{{10 | currency: 'CAD' : 'symbol-narrow' }}</h3>
+    </div>
+</div>
+<div class="row d-flex justify-content-between">
+    <div class="col d-flex justify-content-start">
+        <h3>Total</h3>
+    </div>
+    <div class="col-auto d-flex justify-content-end">
+        <h3>{{110 | currency: 'CAD' : 'symbol-narrow' }}</h3>
+    </div>
+</div>
+<div class="row d-flex justify-content-between">
+    <button class="btn btn-sm btn-warning">Buy Now</button>
+</div>
