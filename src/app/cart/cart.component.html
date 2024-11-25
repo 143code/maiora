@@ -33,7 +33,7 @@
         <h3>Discount</h3>
     </div>
     <div class="col-auto d-flex justify-content-end">
-        <h3>{{10 | currency: 'CAD' : 'symbol-narrow' }}</h3>
+        <h3>{{cart?.totalPrice! *0.23 | currency: 'CAD' : 'symbol-narrow' }}</h3>
     </div>
 </div>
 <div class="row d-flex justify-content-between">
@@ -41,9 +41,9 @@
         <h3>Total</h3>
     </div>
     <div class="col-auto d-flex justify-content-end">
-        <h3>{{110 | currency: 'CAD' : 'symbol-narrow' }}</h3>
+        <h3>{{cart?.totalPrice! * 0.77 | currency: 'CAD' : 'symbol-narrow' }}</h3>
     </div>
 </div>
 <div class="row d-flex justify-content-between">
-    <button class="btn btn-sm btn-warning">Buy Now</button>
+    <button class="btn btn-sm btn-warning" (click)="onBuyNow()">Buy Now</button>
 </div>

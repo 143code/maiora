@@ -14,7 +14,6 @@ export class BurgerService {
   addToCartService(cartItem: CartItem | undefined, add: number): void {
     this.getCartItems();
     if (cartItem) {
-      this.cart.totalPrice = cartItem.price * cartItem.count;
       const index = this.cart.items.findIndex((itm) => itm.id === cartItem.id);
       index > -1
         ? (this.cart.items[index].count += add)
@@ -24,13 +23,17 @@ export class BurgerService {
       );
       this.cart.items[UpdatedIndex].count === 0 &&
         this.cart.items.splice(UpdatedIndex, 1);
+      this.cart.totalPrice = this.cart.items.reduce(
+        (accum, item) => (accum += item.count * item.price),
+        0
+      );
       localStorage.setItem('cart', JSON.stringify(this.cart));
     }
   }
 
   getCartItems(): Observable<Cart> {
     const cartString = localStorage.getItem('cart');
-    this.cart = JSON.parse(cartString ?? '');
+    this.cart = cartString ? JSON.parse(cartString) : {};
     return of(this.cart);
   }
   getCartCount(id: number): Observable<number> {

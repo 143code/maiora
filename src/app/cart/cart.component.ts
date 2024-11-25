@@ -31,4 +31,7 @@ export class CartComponent {
   getCartItems() {
     this.service.getCartItems().subscribe((cart) => (this.cart = cart));
   }
+  onBuyNow() {
+    console.log('Cart Details', this.cart);
+  }
 }
